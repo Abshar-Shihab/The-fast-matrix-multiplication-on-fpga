@@ -20,7 +20,7 @@ def send_and_receive():
     ser.reset_input_buffer()
     print(f"Sending num2: {num2}")
     ser.write(bytes([num2]))  # Send second number
-    time.sleep(5)            # Wait for FPGA acknowledgment and LED blink
+    time.sleep(0.5)            # Wait for FPGA acknowledgment and LED blink
 
     print("Waiting for result...")
     result = ser.read(1)     # Read the result

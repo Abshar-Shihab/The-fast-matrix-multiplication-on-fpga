@@ -22,7 +22,7 @@ module Uart8  #(
     // tx interface
     output wire tx,
     input wire txEn,
-    input wire txStart,
+    //input wire txStart,
     //input reg [7:0] in,
     output wire txDone,
     output wire txBusy,
@@ -36,7 +36,7 @@ wire rxClk;
 wire txClk;
 
 reg [7:0] in = 8'd0;
-//reg txStart;
+reg txStart;
 
 // Registers for received numbers and states
 reg [7:0] num1 = 8'd0; // First received number
@@ -65,7 +65,7 @@ BaudRateGenerator #(
 // Instantiate receiver
 Uart8Receiver rxInst (
     .clk(rxClk),
-    .en(rxEn),
+    .en(1'b1),
     .in(rx),
     .out(out),
     .done(rxDone),
@@ -92,12 +92,16 @@ always @(posedge clk) begin
                 led <= num1 + num2;
 					 //led <= 8'd8;          // Update LED to indicate processing is done
                 state <= 2'd0;        // Reset state for the next input sequence
-					 cond <= 1'b0;
+					 //cond <= 1'b0;
 					 in <= num1 + num2;
-					 //txStart <= 1;
+					 txStart <= 1;
+					 if(!txBusy && txStart && txDone) begin
+						//txStart <= 1'b0;
+						cond <= 1'b0;
+					 end
 	 end
     if (rxDoneEdge) begin
-	 //txStart <= 0;
+	 txStart <= 0;
         case (state)
             2'd0: begin
 				in <= 8'd0;

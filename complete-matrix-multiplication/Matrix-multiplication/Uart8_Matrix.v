@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+
 module Uart8_Matrix #(
     parameter CLOCK_RATE = 100000000,
     parameter BAUD_RATE = 9600,

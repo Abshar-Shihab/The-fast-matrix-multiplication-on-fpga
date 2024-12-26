@@ -1,0 +1,39 @@
+
+Net "clk" LOC=V10 | IOSTANDARD=LVCMOS33; 
+Net "clk" TNM_NET = sys_clk_pin; 
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz; 
+
+
+## Buttons
+NET "txStart"         LOC = "B8"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L33P,                           Sch name = BTNS
+#NET "btn<1>"         LOC = "A8"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L33N,                           Sch name = BTNU
+#NET "btn<2>"         LOC = "C4"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L1N_VREF,                       Sch name = BTNL
+NET "rxEn"         LOC = "C9"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L34N_GCLK18,                    Sch name = BTND
+#NET "btn<4>"         LOC = "D9"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L34P_GCLK19,                    Sch name = BTNR
+
+NET "in[0]"          LOC = "T10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L29N_GCLK2,                     Sch name = SW0
+NET "in[1]"          LOC = "T9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L32P_GCLK29,                    Sch name = SW1
+NET "in[2]"          LOC = "V9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L32N_GCLK28,                    Sch name = SW2
+NET "in[3]"          LOC = "M8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L40P,                           Sch name = SW3
+NET "in[4]"          LOC = "N8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L40N,                           Sch name = SW4
+NET "in[5]"          LOC = "U8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L41P,                           Sch name = SW5
+NET "in[6]"          LOC = "V8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L41N_VREF,                      Sch name = SW6
+NET "in[7]"          LOC = "T5"  | IOSTANDARD = "LVCMOS33";   #Bank = MISC, Pin name = IO_L48N_RDWR_B_VREF_2,          Sch name = SW7
+
+
+
+NET "rx" LOC = "N17" | IOSTANDARD = LVCMOS33;  # UART Rx99
+NET "tx" LOC = "N18" | IOSTANDARD = LVCMOS33;  # UART Tx
+
+
+## Leds
+NET "led[0]"         LOC = "U16" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L2P_CMPCLK,                     Sch name = LD0
+NET "led[1]"         LOC = "V16" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L2N_CMPMOSI,                    Sch name = LD1
+NET "led[2]"         LOC = "U15" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L5P,                            Sch name = LD2
+NET "led[3]"         LOC = "V15" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L5N,                            Sch name = LD3
+NET "led[4]"         LOC = "M11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L15P,                           Sch name = LD4
+NET "led[5]"         LOC = "N11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L15N,                           Sch name = LD5
+NET "led[6]"         LOC = "R11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L16P,                           Sch name = LD6
+NET "led[7]"         LOC = "T11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L16N_VREF,                      Sch name = LD7
+
+
